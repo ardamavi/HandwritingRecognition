@@ -5,23 +5,32 @@ from img_procedure import *
 from neural_network_procedure import *
 
 def getTrainData():
+    # X is training data and y is label:
     X, y = [], []
+
+    # We get the training datasets from training images file:
     train_dir = 'Data/images/train'
+
+    # Geting training characters:
     try:
-        data0Imgs = listdir(train_dir+'/0')
-        data1Imgs = listdir(train_dir+'/1')
+        char_dirs = listdir(train_dir)
     except:
         return None, None
-    if len(data0Imgs) < 1 or len(data1Imgs) < 1:
+
+    # Looking for a character images is not null:
+    for char_dir in char_dirs:
+        if len(listdir(train_dir+'/'+char_dir)) < 1:
+            char_dirs.remove(char_dir)
+        else:
+            continue
+    # If all character lists is null, return None:
+    if len(char_dirs) < 1:
         return None, None
-
-    for img_dir in data0Imgs:
-        X.append([getImg(train_dir+'/0/'+img_dir)])
-        y.append(0)
-
-    for img_dir in data1Imgs:
-        X.append([getImg(train_dir+'/1/'+img_dir)])
-        y.append(1)
+    # Getting image datasets from all character dir:
+    for char_dir in char_dirs:
+        for img_dir in listdir(train_dir+'/'+char_dir):
+            X.append([getImg(train_dir+'/'+char_dir+'/'+img_dir)])
+            y.append(ord(char_dir))
 
     return X, y
 
@@ -47,14 +56,14 @@ def main():
         clf = createNeuralNetwork()
         X, y = getTrainData()
         if X is None:
-            print('Train data not found!')
+            print('Training datasets not found!')
             return
         # TODO: Make regular X data
         clf = trainNeuralNetwork(clf, X, y)
         saveClf(clf)
 
     # Predict:
-    print('Predict:', NeuralNetworkPredict(clf, img))
+    print('Predict:', chr(NeuralNetworkPredict(clf, img)))
 
     # Finish main:
     return

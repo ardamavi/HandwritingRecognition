@@ -19,7 +19,7 @@ def getNeuralNetwork():
     return clf
 
 def trainNeuralNetwork(clf, X, y):
-    # Train Neural Network:
+    # Training Neural Network:
     return clf.fit(X, y)
 
 def NeuralNetworkPredict(clf, img):
