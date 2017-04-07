@@ -4,7 +4,7 @@ from sklearn.neural_network import MLPClassifier
 
 def createNeuralNetwork():
     # Createing Neural Network:
-    return MLPClassifier(activation='tanh', hidden_layer_sizes=(8, 2))
+    return MLPClassifier(activation='tanh', hidden_layer_sizes=(18, 5))
 
 def saveNeuralNetwork(clf):
     # Save classifier:

@@ -29,9 +29,8 @@ def getTrainData():
     # Getting image datasets from all character dir:
     for char_dir in char_dirs:
         for img_dir in listdir(train_dir+'/'+char_dir):
-            X.append([getImg(train_dir+'/'+char_dir+'/'+img_dir)])
+            X.append(getImg(train_dir+'/'+char_dir+'/'+img_dir))
             y.append(ord(char_dir))
-
     return X, y
 
 def main():
@@ -60,7 +59,7 @@ def main():
             return
         # TODO: Make regular X data
         clf = trainNeuralNetwork(clf, X, y)
-        saveClf(clf)
+        saveNeuralNetwork(clf)
 
     # Predict:
     print('Predict:', chr(NeuralNetworkPredict(clf, img)))
