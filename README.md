@@ -1,7 +1,7 @@
 # Handwriting Recognition
 ### Arda Mavi - [ardamavi.com](http://www.ardamavi.com/)
 
-Handwriting recognition with neural network
+Handwriting recognition with machine learning.
 
 ### Using Commend: <br/>
 `python3 main.py <ImageFileName>`
@@ -23,4 +23,4 @@ Note: We work on grayscale(2D matrix) image also if you use color images(like RG
 ### Important Notes:
 - Suggested image size: 25x25
 - Install above modules
-- If you want to update neural network model(maybe for newly trained neural network model with new data sets), delete 'Data/neural_network/classifier.pkl' file and run program again.
+- If you want to update classifier(maybe for newly trained classifier with new data sets), delete 'Data/classifier/classifier.pkl' file and run program again.
