@@ -4,11 +4,7 @@ from sklearn.neural_network import MLPClassifier
 
 def createNeuralNetwork():
     # Createing Neural Network:
-    return MLPClassifier(activation='tanh', hidden_layer_sizes=(18, 5))
-
-def saveNeuralNetwork(clf):
-    # Save classifier:
-    joblib.dump(clf, 'Data/neural_network/classifier.pkl')
+    return MLPClassifier(hidden_layer_sizes=(40, 28, 10))
 
 def getNeuralNetwork():
     # Getting trained Neural Network:
@@ -22,6 +18,13 @@ def trainNeuralNetwork(clf, X, y):
     # Training Neural Network:
     return clf.fit(X, y)
 
-def NeuralNetworkPredict(clf, img):
+def getScore(clf, X, y):
+    return clf.score(X, y)
+
+def getPredict(clf, img):
     # Get predict:
     return clf.predict(img)
+
+def saveNeuralNetwork(clf):
+    # Save classifier:
+    joblib.dump(clf, 'Data/neural_network/classifier.pkl')
