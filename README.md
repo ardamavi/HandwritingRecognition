@@ -27,3 +27,4 @@ Note: We work on grayscale(2D matrix) image also if you use color images(like RG
 - Suggested image size: 25x25
 - Install above modules
 - If you want to update classifier(maybe for newly trained classifier with new data sets), delete 'Data/classifier/classifier.pkl' file and run program again.
+- The program can only distinguish  '0', '1' and 'A' characters. To be able to distinguish other characters, you should add new character datasets.
