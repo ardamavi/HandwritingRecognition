@@ -3,6 +3,9 @@
 
 Handwriting recognition with machine learning.
 
+I used decision trees from [Scikit-Learn](http://scikit-learn.org) for finding which character in image.
+Scikit-Learn is an open source Python library for machine learning.
+
 ### Using Commend: <br/>
 `python3 main.py <ImageFileName>`
 
