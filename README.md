@@ -3,18 +3,18 @@
 
 Handwriting recognition with machine learning.
 
-I used decision trees from [Scikit-Learn](http://scikit-learn.org) for finding which character in image.
+I used decision trees from [Scikit-Learn](http://scikit-learn.org) to finding which character in image.
 Scikit-Learn is an open source Python library for machine learning.
 
 ### Using Commend: <br/>
 `python3 main.py <ImageFileName>`
 
 ### Adding new characters and train dataset:
-If you want to adding new character to datasets, you create a directory and rename what you want to add character (like 'a' or 'i').
+If you want to add new character to datasets, you create a directory and rename what you want to add character (like 'a' or 'i').
 
 If you want to add a new training images to previously character datasets or null dataset of character, you add a image(suggested image size: 25x25) to about character directory.
 
-Note: We work on grayscale(2D matrix) image also if you use color images(like RGB), program automatically return to grayscale from your color image.
+Note: We work on grayscale(2D matrix) image also if you use color images(like RGB), program will automatically return to grayscale from your color image.
 
 ### Used Modules:
 - sys
